@@ -9,7 +9,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @RestController
-public class BalanceController {
+public class BalanceController extends BaseController{
 
     @GetMapping(value = "/balance/update", produces = {"application/json;charset=UTF-8"})
     public Boolean accountUpdate(@RequestParam("name") String name,
@@ -19,6 +19,8 @@ public class BalanceController {
         if (type) {
             String info = String.format("%s 余额变化 %s %s", name, delta.toPlainString(), simpleDateFormat.format(new Date()));
             System.out.println(info);
+        } else {
+            throw new RuntimeException("余额更新失败");
         }
         return type;
     }
