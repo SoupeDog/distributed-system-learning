@@ -10,10 +10,7 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>eureka</module>
-        <module>eureka2</module>
-        <module>account-service</module>
-        <module>business-service</module>
+        <module>netflix</module>
     </modules>
 
 
